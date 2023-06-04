@@ -1,0 +1,36 @@
+---CREATE GROCERY STORE DATA BASE---
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, Popularity INTEGER); 
+
+INSERT into Store VALUES (1, "kiwi", "produce",3.99, 70);
+INSERT into Store VALUES (3, "granola", "snacks",4.00 , 80);
+INSERT into Store VALUES (4, "toothpaste", "hygiene", 6.99 , 60);
+INSERT into Store VALUES (5, "Q-tips", "hygiene", 3.99, 40);
+INSERT into Store VALUES (6, "salsa", "fresh", 4.25, 53);
+INSERT into Store VALUES (7, "popcorn", "snacks", 5.20, 65); 
+INSERT into Store Values (8, "fish oil vitamin", "Health", 9.50, 46);
+INSERT into Store Values (9, "Milk", "Dairy", 4.25, 92);
+INSERT into Store Values (10, "Lamb Chop", "Meat", 8.99, 56);
+INSERT into Store Values (11, "Chicken", "Meat", 10.25, 89);
+INSERT into Store Values (12, "Protein Powder", "Fitness", 12.45, 37);
+INSERT into Store Values (13, "Pre work out pill", "Fitness", 7.80, 29);
+INSERT into Store Values (14, "Vitamin D", "Health", 7.60, 81);
+INSERT into Store Values (15," Fresh cut mangos", "Fresh", 5.29, 74);
+
+---DISPLAY THE DATABASE ORDERED BY PRICE---
+
+SELECT * FROM STORE
+ORDER BY price asc;
+
+---WHAT IS THE AVERAGE PRICE OF ITEMS IN THE FITNESS SECTION?----
+
+SELECT AVG (price)"avg fitness item price" 
+FROM STORE
+where section= 'Fitness';
+
+---WHAT ARE THE 5 MOST POPULAR ITEMS?---
+
+SELECT item, price popularity 
+FROM store 
+ORDER by popularity asc
+limit 5; 
